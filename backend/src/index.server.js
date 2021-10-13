@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 // Import routes
 
 const authRoutes = require("./routes/auth");
+const adminRoutes = require("./routes/admin/auth");
 
 // envoirment variable
 env.config();
@@ -25,6 +26,7 @@ mongoose
 
 app.use(express.json());
 app.use("/api", authRoutes);
+app.use("/api", adminRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is runing on port ${process.env.PORT}`);
