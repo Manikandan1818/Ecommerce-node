@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
-import { Home } from "./containers/Home";
-import { Signin } from "./containers/Signin";
-import { Signup } from "./containers/Signup";
+import { Home } from "./containers/Home/Home";
+import { Signin } from "./containers/Signin/Signin";
+import { Signup } from "./containers/Signup/Signup";
 
 function App() {
   return (
