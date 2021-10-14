@@ -60,6 +60,8 @@ exports.signin = (req, res) => {
   });
 };
 
+// Verify user token
+
 exports.requiresignin = (req, res, next) => {
   const token = req.headers.authorization.split(" ")[1];
   const user = jwt.verify(token, process.env.JWT_SECRET);
