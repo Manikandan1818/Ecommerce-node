@@ -15,7 +15,7 @@ exports.signup = (req, res) => {
       lastName,
       email,
       password,
-      username: Math.random().toString(),
+      userName: Math.random().toString(),
     });
 
     _user.save((error, data) => {
@@ -61,10 +61,3 @@ exports.signin = (req, res) => {
 };
 
 // Verify user token
-
-exports.requiresignin = (req, res, next) => {
-  const token = req.headers.authorization.split(" ")[1];
-  const user = jwt.verify(token, process.env.JWT_SECRET);
-  req.user = user;
-  next();
-};

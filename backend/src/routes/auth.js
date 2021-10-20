@@ -1,5 +1,5 @@
 const express = require("express");
-const { signup, signin, requiresignin } = require("../controller/auth");
+const { signup, signin } = require("../controller/auth");
 const {
   validateSignupRequest,
   isRequestValidated,
@@ -12,8 +12,8 @@ router.post("/signup", validateSignupRequest, isRequestValidated, signup);
 
 router.post("/signin", validateSigninRequest, isRequestValidated, signin);
 
-router.post("/profile", requiresignin, (req, res) => {
+/* router.post("/profile", requiresignin, (req, res) => {
   res.status(200).json({ user: "profile" });
-});
+});*/
 
 module.exports = router;
