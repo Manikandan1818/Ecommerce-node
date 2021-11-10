@@ -4,8 +4,8 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 export const Header = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" variant="dark">
+      <Container fluid>
         <Link to="/" className="navbar-brand">
           Admin Dashboard
         </Link>

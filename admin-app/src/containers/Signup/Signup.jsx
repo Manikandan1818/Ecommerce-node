@@ -1,9 +1,17 @@
 import React from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router";
 import { Layout } from "../../components/Layout/Layout";
 import { Input } from "../../components/UI/Input/Input";
 
 export const Signup = (props) => {
+  // If user logged in it doesn't go to the signup page
+  const auth = useSelector((state) => state.auth);
+  if (auth.authenticate) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <Layout>
       <Container>

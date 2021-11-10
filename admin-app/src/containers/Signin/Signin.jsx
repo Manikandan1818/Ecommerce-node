@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Layout } from "../../components/Layout/Layout";
 import { Input } from "../../components/UI/Input/Input";
-import { isUserLoggedIn, login } from "../../action/auth.action";
+import { login } from "../../action/auth.action";
 import { Redirect } from "react-router";
 
 export const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [error, setError] = useState("");
+
   const auth = useSelector((state) => state.auth);
-
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!auth.authenticate) {
-      dispatch(isUserLoggedIn());
-    }
-  }, []);
 
   const userLogin = (e) => {
     e.preventDefault();
@@ -30,6 +24,7 @@ export const Signin = () => {
     dispatch(login(user));
   };
 
+  // If user logged in it will go to the home page
   if (auth.authenticate) {
     return <Redirect to="/" />;
   }
