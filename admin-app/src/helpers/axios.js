@@ -4,7 +4,7 @@ import { API } from "../urlConfig";
 const axiosIntance = axios.create({
   baseURL: API,
   headers: {
-    Authorizaation: "",
+    Authorization: "",
   },
 });
 
