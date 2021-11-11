@@ -12,7 +12,9 @@ export const Home = () => {
           <Col md={2} className="sidebar">
             Sidebar
           </Col>
-          <Col md={10}>Container</Col>
+          <Col md={10} className="container">
+            Container
+          </Col>
         </Row>
       </Container>
     </Layout>
