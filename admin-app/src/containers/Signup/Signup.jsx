@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
+
 import { signUp } from "../../action";
 import { Layout } from "../../components/Layout/Layout";
 import { Input } from "../../components/UI/Input/Input";
